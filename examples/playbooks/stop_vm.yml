@@ -1,0 +1,9 @@
+---
+- name: Stop VM
+  hosts:
+    - hyper_v
+  tasks:
+    - name: Start VM if not started
+      hyper_v_vm_state:
+        name: '*TMP*'
+        state: stopped

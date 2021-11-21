@@ -1,0 +1,10 @@
+---
+- name: Revert VM
+  hosts:
+    - hyper_v
+  tasks:
+    - name: Revet vms to the last snapshot
+      hyper_v_vm_snapshots:
+        name: '*TMP*'
+        state: restore
+        snapshotname: 'start exercise'
